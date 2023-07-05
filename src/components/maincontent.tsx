@@ -1,32 +1,28 @@
 import { useState } from "react";
-// import  FizzBuzzvalue  from "./components/Fizzbuzzlist";
+import  FizzBuzzvalue  from "./Fizzbuzzlist";
 
 
 export default function FizzBuzz(): JSX.Element {
-    const [counterValueFromCurrentRender, queueRerenderWithNewCounterValue] =
+    const [currentValue, setCurrentVlaue] =
       useState(1);
-    const [fizzBuzzValueFromCurrentRender, queueRerenderWithNewFizzBuzzValue] =
+    const [list, setlist] =
       useState<(number|string)[]>([]);
-
-
-      
-    
-    
     
       const handleNext = () => {
-      queueRerenderWithNewCounterValue(prev => prev + 1)
-      queueRerenderWithNewFizzBuzzValue([
-        ...fizzBuzzValueFromCurrentRender,
-        counterValueFromCurrentRender,
+        setCurrentVlaue(prev => prev + 1)
+        setlist([
+        ...list,
+        FizzBuzzvalue(currentValue),
       ]);
     };
     
     return (
       <>
         <h1>FizzBuzz</h1>
-        <p>Current number: {counterValueFromCurrentRender}</p>
+        <p>Current number: {currentValue}</p>
         <button onClick={handleNext}>Next</button>
-        <p>FizzBuzz Array: {fizzBuzzValueFromCurrentRender.map((handleNext, index) => (
+
+        <p>FizzBuzz Array: {list.map((handleNext, index) => (
         <li key = {index}>{handleNext}</li>))}
         </p>
         
