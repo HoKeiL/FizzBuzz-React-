@@ -8,3 +8,4 @@ export default function FizzBuzzvalue(num: number): number | string {
   }
   return num;
 }
+
