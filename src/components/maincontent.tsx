@@ -3,11 +3,11 @@ import FizzBuzzvalue from "./Fizzbuzzlist";
 
 export default function FizzBuzz(): JSX.Element {
   const [currentValue, setCurrentVlaue] = useState(1);
-  const [list, setlist] = useState<(number | string)[]>([]);
+  const [list, setList] = useState<(number | string)[]>([]);
 
   const handleNext = () => {
     setCurrentVlaue((prev) => prev + 1);
-    setlist([...list, FizzBuzzvalue(currentValue)]);
+    setList([...list, FizzBuzzvalue(currentValue)]);
   };
 
   return (
